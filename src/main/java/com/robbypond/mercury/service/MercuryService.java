@@ -3,7 +3,6 @@ package com.robbypond.mercury.service;
 import com.robbypond.mercury.data.MercuryArticle;
 import com.robbypond.mercury.util.HtmlGenerator;
 import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import retrofit2.Call;
@@ -20,8 +19,6 @@ public interface MercuryService {
     Logger log = LoggerFactory.getLogger(MercuryService.class);
 
     static MercuryService createInstance(String baseUrl) {
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(30, TimeUnit.SECONDS)
@@ -30,7 +27,6 @@ public interface MercuryService {
                 .followRedirects(true)
                 .followSslRedirects(true)
                 .retryOnConnectionFailure(true)
-                .addInterceptor(logging)
                 .build();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)

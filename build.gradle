@@ -16,7 +16,6 @@ dependencies {
     api 'com.squareup.retrofit2:retrofit:2.8.1'
     implementation 'com.squareup.retrofit2:converter-moshi:2.8.1'
     implementation 'com.squareup.okhttp3:okhttp:4.5.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.5.0'
     implementation 'com.googlecode.jatl:jatl:0.2.3'
     implementation 'org.jsoup:jsoup:1.13.1'
     implementation 'org.slf4j:slf4j-api:1.7.30'
