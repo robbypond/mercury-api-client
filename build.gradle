@@ -96,5 +96,5 @@ bintray {
             released  = new Date()
         }
     }
-
+    publish = true
 }
